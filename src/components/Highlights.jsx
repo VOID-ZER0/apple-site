@@ -24,7 +24,7 @@ const Highlights = () => {
             <h2>There’s never been a better time to upgrade.</h2>
             <h3>Here’s what you get with the new MacBook Pro.</h3>
 
-            <div className="masonry">
+            <div className="masonry max-w-7xl mx-auto">
                 <div className="left-column">
                     <div>
                         <img src="/laptop.png" alt="Laptop" />
