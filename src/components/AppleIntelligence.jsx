@@ -87,7 +87,7 @@ const AppleIntelligence = () => {
            </p>
            <p className="text-primary">Learn more about apple intelligence</p>
 
-           <img src='/public/ai.jpg' style={ai}></img>
+           <img src='/ai.jpg' style={ai}></img>
       </div>
     </section>
   )
