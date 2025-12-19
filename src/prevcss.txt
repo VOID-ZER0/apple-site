@@ -1,8 +1,9 @@
 
 
-
-
 @import "tailwindcss";
+
+
+
 
 @font-face {
   font-family: "Regular";
@@ -61,6 +62,7 @@ body {
   background-color: #000;
   color: var(--color-dark-100);
   font-family: var(--font-semibold);
+
 }
 
 @utility flex-center {
@@ -192,14 +194,21 @@ body {
 
       video {
         @apply w-full object-cover object-center;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        will-change: auto;
+        transform: translateZ(0);
       }
 
       .mask {
         @apply absolute h-full top-0 lg:-top-20 xl:top-0;
+        pointer-events: none;
 
         img {
           @apply h-full scale-150 lg:scale-100;
           transform: matrix(80, 0, 0, 80, 0, 0);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
 
         @media (max-width: 1024px) {
@@ -212,6 +221,7 @@ body {
 
     .content {
       @apply relative z-10 my-5 lg:-mt-40 bg-black font-semibold text-xl text-dark-100 lg:opacity-0;
+      will-change: opacity, transform;
 
       .wrapper {
         @apply container mx-auto px-5 pb-20 2xl:px-0 flex flex-col lg:flex-row justify-center gap-20;
@@ -435,484 +445,6 @@ body {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* connectivity */
-.connectivity-section {
-  width: 100vw; /* full viewport width so edges match screen edges */
-  display: block;
-  padding: 60px 0;
-  position: relative;
-  overflow: hidden;
-  background-color: #000;
-}
-
-/* Thin gradient lines */
-.gradient-line {
-  width: 40%;
-  height: 1.4px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    #0090f7 20%,
-    #ba62fc 50%,
-    #f2416b 80%,
-    transparent 100%
-  );
-  margin: 40px 0;
-  opacity: 0.6;
-}
-
-.gradient-line-top {
-  margin-top: 0;
-  margin-bottom: 60px;
- 
-}
-
-.gradient-line-bottom {
-  margin-top: 60px;
-  margin-bottom: 0;
-}
-
-.connectivity-content {
-  max-width: 1200px;
-  margin-left: 440px;
-  margin-right: auto;
-  padding: 0 40px;
-  margin-bottom: 60px;
-}
-
-.connectivity-subtitle {
-  color: #f5f5f7;
-  font-size: 22px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.connectivity-title {
-  color: white;
-  font-size: clamp(32px, 6vw, 88px);
-  font-weight: 600;
-  line-height: 1;
-  text-align: left;
-  margin-bottom: 40px;
-  max-width: 900px;
-}
-
-.connectivity-text {
-  max-width: 800px;
-  color: #86868b;
-  background-color: #000;
-  font-size: clamp(16px, 2.5vw, 24px);
-  line-height: 1.6;
-  text-align: left;
-}
-
-.connectivity-text p {
-  margin-bottom: 24px;
-  color: #86868b;
-}
-
-.connectivity-text p:last-child {
-  margin-bottom: 0;
-}
-
-/* Responsive breakpoints */
-@media (max-width: 1440px) {
-  .connectivity-content {
-    margin-left: 200px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .connectivity-section {
-    padding: 80px 0;
-  }
-
-  .connectivity-content {
-    margin-left: 60px;
-    padding: 0 30px;
-    margin-bottom: 80px;
-  }
-
-  .connectivity-title {
-    margin-bottom: 50px;
-  }
-
-  .gradient-line {
-    margin: 30px 0;
-
-  }
-
-  .gradient-line-top {
-    margin-bottom: 50px;
-   
-  }
-
-  .gradient-line-bottom {
-    margin-top: 50px;
-  }
-}
-
-@media (max-width: 768px) {
-  .connectivity-section {
-    padding: 60px 0;
-  }
-
-  .connectivity-content {
-    margin-left: 0;
-    padding: 0 24px;
-    margin-bottom: 60px;
-  }
-
-  .gradient-line {
-    margin: 20px 0;
-  }
-
-  .gradient-line-top {
-    margin-bottom: 40px;
-  }
-
-  .gradient-line-bottom {
-    margin-top: 40px;
-  }
-
-  .connectivity-subtitle {
-    font-size: 18px;
-    margin-bottom: 16px;
-  }
-
-  .connectivity-title {
-    margin-bottom: 40px;
-  }
-
-  .connectivity-text {
-    font-size: 17px;
-  }
-
-  .connectivity-text p {
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .connectivity-section {
-    padding: 40px 0;
-  }
-
-  .connectivity-content {
-    padding: 0 20px;
-    margin-bottom: 40px;
-  }
-
-  .gradient-line {
-    margin: 15px 0;
-  }
-
-  .gradient-line-top {
-    margin-bottom: 30px;
-  }
-
-  .gradient-line-bottom {
-    margin-top: 30px;
-  }
-
-  .connectivity-subtitle {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-
-  .connectivity-title {
-    margin-bottom: 30px;
-  }
-
-  .connectivity-text {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .connectivity-text p {
-    margin-bottom: 16px;
-  }
-}
-
-.macbooks-wrapper {
-  position: relative;
-  width: 100vw; /* ensure absolute children use full screen width for left/right: 0 */
-  min-height: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-}
-
-/* Base style for both macbooks (stacked one under another, but pinned to screen sides) */
-.macbook {
-  position: absolute;
-  width: clamp(300px, 75vw, 1100px); /* responsive width */
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.8));
-  opacity: 0;
-  transform-origin: center center;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Positions: top one at top-right edge, bottom one at bottom-left edge */
-.macbook-left {
-  top: 0;
-  right: 0;
-  transform: translateX(120%) scale(0.95); /* start fully off-screen from right */
-}
-
-.macbook-right {
-  bottom: 0;
-  left: 0;
-  transform: translateX(-120%) scale(0.95); /* start fully off-screen from left */
-}
-
-/* When the section is in view, play the animations to slide in and stay pinned to edges */
-.connectivity-section.in-view .macbook-left {
-  animation: macbook-from-right 1.3s cubic-bezier(0.25, 0.9, 0.25, 1.2)
-    forwards;
-}
-
-.connectivity-section.in-view .macbook-right {
-  animation: macbook-from-left 1.3s cubic-bezier(0.25, 0.9, 0.25, 1.2)
-    forwards;
-  animation-delay: 0.2s;
-}
-
-/* Top image (right side): start far off to the right, end 10px past the right edge */
-@keyframes macbook-from-right {
-  0% {
-    opacity: 0;
-    transform: translateX(120%) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(43px) scale(1);   /* slightly off the right side */
-  }
-}
-/* Bottom image (left side): start far off to the left, end 10px past the left edge */
-@keyframes macbook-from-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-120%) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-43px) scale(1);  /* slightly off the left side */
-  }
-}
-
-/* Responsive MacBook styles */
-@media (max-width: 1024px) {
-  .macbooks-wrapper {
-    min-height: 280px;
-    gap: 2rem;
-  }
-
-  .macbook {
-    width: clamp(280px, 70vw, 900px);
-  }
-
-  .macbook-right {
-    bottom: auto;
-    top: 180px; /* Position closer to top MacBook */
-  }
-}
-
-@media (max-width: 768px) {
-  .macbooks-wrapper {
-    min-height: 200px;
-    gap: 1rem;
-  }
-
-  .macbook {
-    width: clamp(250px, 65vw, 700px);
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
-  }
-
-  .macbook-right {
-    top: 140px; /* Even closer on tablet */
-  }
-
-  /* Adjust final positions for mobile - override animation end state */
-  .connectivity-section.in-view .macbook-left {
-    animation: macbook-from-right-mobile 1.3s cubic-bezier(0.25, 0.9, 0.25, 1.2) forwards;
-  }
-
-  .connectivity-section.in-view .macbook-right {
-    animation: macbook-from-left-mobile 1.3s cubic-bezier(0.25, 0.9, 0.25, 1.2) forwards;
-    animation-delay: 0.2s;
-  }
-}
-
-@media (max-width: 480px) {
-  .macbooks-wrapper {
-    min-height: 160px;
-    gap: 0.5rem;
-  }
-
-  .macbook {
-    width: clamp(200px, 60vw, 500px);
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
-  }
-
-  .macbook-right {
-    top: 110px; /* Very close on mobile */
-  }
-}
-
-/* Mobile-specific animations with smaller translateX values */
-@keyframes macbook-from-right-mobile {
-  0% {
-    opacity: 0;
-    transform: translateX(120%) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(20px) scale(1);
-  }
-}
-
-@keyframes macbook-from-left-mobile {
-  0% {
-    opacity: 0;
-    transform: translateX(-120%) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-20px) scale(1);
-  }
-}
-
-
-
-
-
-
-
-
-/* textr */
-/* SECTION */
-.ports-section {
-  background: #000;
-  color: #fff;
-  padding: 120px 80px;
-}
-
-/* GRID */
-.ports-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 120px;
-}
-
-/* COLUMN */
-.ports-col {
-  position: relative;
-}
-
-/* GRADIENT LINE */
-.gradient-line {
-  display: block;
-  width: 100%;
-  height: 1px;
-  margin-bottom: 32px;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0)
-  );
-}
-
-/* LEFT TEXT */
-.ports-list {
-  font-size: 32px;
-  line-height: 1.15;
-  font-weight: 500;
-}
-
-.ports-list strong {
-  font-weight: 600;
-}
-
-/* RIGHT TEXT */
-.ports-description {
-  max-width: 520px;
-  font-size: 20px;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.ports-description strong {
-  color: #fff;
-  font-weight: 600;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .ports-section {
-    padding: 80px 24px;
-  }
-
-  .ports-grid {
-    grid-template-columns: 1fr;
-    row-gap: 64px;
-  }
-
-  .ports-list {
-    font-size: 26px;
-  }
-
-  .ports-description {
-    font-size: 18px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

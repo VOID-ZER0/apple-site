@@ -9,8 +9,11 @@ import Performance from './components/Performance';
 import Features from './components/Features';
 import Highlights from './components/Highlights';
 import Footer from './components/Footer';
+import AppleIntelligence from './components/AppleIntelligence';
+import Connectivity from './components/Connectivity';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 
@@ -23,8 +26,11 @@ const App = () => {
       <Showcase></Showcase>
       <Performance></Performance>
       <Features></Features>
+      <AppleIntelligence></AppleIntelligence>
+      <Connectivity></Connectivity>
       <Highlights></Highlights>
       <Footer></Footer>
+  
     </main>
   )
 }
