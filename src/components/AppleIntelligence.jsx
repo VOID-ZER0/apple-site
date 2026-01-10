@@ -73,6 +73,7 @@ const AppleIntelligence = () => {
     // position: 'absolute',
     overflowClipMargin: 'content-box',
     overflow: 'clip',
+    
   } 
  
 
@@ -91,6 +92,8 @@ const AppleIntelligence = () => {
       </div>
     </section>
   )
-}
+};
 
-export default AppleIntelligence
+
+
+export default AppleIntelligence;
